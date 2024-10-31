@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react'; // Ajout de useCallback
+import React, { useState, useEffect, useCallback, useRef } from 'react'; // Ajout de useRef
 import "./style.scss";
 import { NavLink } from "react-router-dom";
 import logo from '../../Logo/logo_m_red.png';
@@ -6,28 +6,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 export default function Header() {
-  let sidemenu = document.getElementById("sidemenu");
+  const sidemenuRef = useRef(null); // Utilisation de useRef
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const openMenu = () => {
-    sidemenu = document.getElementById("sidemenu");
-    setIsMenuOpen(true);
-    sidemenu.style.right = "0";
+    if (sidemenuRef.current) {
+      setIsMenuOpen(true);
+      sidemenuRef.current.style.right = "0";
+    }
   };
 
-  const closeMenu = () => {
-    sidemenu = document.getElementById("sidemenu");
-    setIsMenuOpen(false);
-    sidemenu.style.right = "-200px";
-  };
+  const closeMenu = useCallback(() => {
+    if (sidemenuRef.current) {
+      setIsMenuOpen(false);
+      sidemenuRef.current.style.right = "-200px";
+    }
+  }, []);
 
   // Gestionnaire d'événements pour détecter les clics en dehors du menu
   const handleClickOutside = useCallback((event) => {
-    const sidemenu = document.getElementById("sidemenu");
-    if (sidemenu && !sidemenu.contains(event.target)) {
+    if (sidemenuRef.current && !sidemenuRef.current.contains(event.target)) {
       closeMenu();
     }
-  }, []);
+  }, [closeMenu]);
 
   // Utiliser useEffect pour ajouter et supprimer le gestionnaire d'événements
   useEffect(() => {
@@ -50,7 +51,7 @@ export default function Header() {
             <NavLink to="/">
               <img src={logo} className="logo" alt="Logo" />
             </NavLink>
-            <ul id="sidemenu" className={isMenuOpen ? 'open' : ''}>
+            <ul id="sidemenu" ref={sidemenuRef} className={isMenuOpen ? 'open' : ''}>
               <li>
                 <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>Home</NavLink>
               </li>
