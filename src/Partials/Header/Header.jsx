@@ -39,7 +39,7 @@ export default function Header() {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, handleClickOutside]);
 
   return (
     <div id="header">
