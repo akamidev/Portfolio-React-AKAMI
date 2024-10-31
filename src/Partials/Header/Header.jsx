@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'; // Ajout de useEffect
+import React, { useState, useEffect, useCallback } from 'react'; // Ajout de useCallback
 import "./style.scss";
 import { NavLink } from "react-router-dom";
 import logo from '../../Logo/logo_m_red.png';
@@ -22,11 +22,12 @@ export default function Header() {
   };
 
   // Gestionnaire d'événements pour détecter les clics en dehors du menu
-  const handleClickOutside = (event) => {
+  const handleClickOutside = useCallback((event) => {
+    const sidemenu = document.getElementById("sidemenu");
     if (sidemenu && !sidemenu.contains(event.target)) {
       closeMenu();
     }
-  };
+  }, []);
 
   // Utiliser useEffect pour ajouter et supprimer le gestionnaire d'événements
   useEffect(() => {
