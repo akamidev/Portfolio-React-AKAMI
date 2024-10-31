@@ -1,11 +1,13 @@
 # 🖥️ Mon Portfolio en React
 
-![React](https://img.shields.io/badge/React-18.0.0-blue?logo=react)
-![EmailJS](https://img.shields.io/badge/EmailJS-3.2.0-green?logo=emailjs)
-![Status](https://img.shields.io/badge/Status-Completed-success)
-![License](https://img.shields.io/badge/License-MIT-blue)
+[![React](https://img.shields.io/badge/React-18.0.0-blue?logo=react)](https://akamimehdi.netlify.app/)
+[![EmailJS](https://img.shields.io/badge/EmailJS-3.2.0-green?logo=emailjs)](https://akamimehdi.netlify.app/)
+[![Status](https://img.shields.io/badge/Status-Completed-success)](https://akamimehdi.netlify.app/)
+[![License](https://img.shields.io/badge/License-MIT-blue)](https://akamimehdi.netlify.app/)
 
-> Un portfolio développé en ReactJS avec une intégration de EmailJS pour envoyer des emails via le formulaire de contact. Découvrez mes projets, mes compétences, et contactez-moi facilement.
+> **Découvrez mon portfolio en ligne : [Visitez ici](https://akamimehdi.netlify.app/)**
+
+Un portfolio développé en ReactJS avec une intégration de EmailJS pour envoyer des emails via le formulaire de contact. Découvrez mes projets, mes compétences, et contactez-moi facilement.
 
 ## 🎯 Objectif du Projet
 
@@ -45,8 +47,8 @@ Page d'accueil
 Page Portfolio
 
 ## 📬 Contact
-Pour me contacter, utilisez le formulaire sur la page Contact ou directement via LinkedIn.
+Pour me contacter, utilisez le formulaire sur la page [Contact](https://akamimehdi.netlify.app/contact) ou directement via [LinkedIn](https://www.linkedin.com/in/akami-mehdi/).
 
 
 ## 📄 Licence
-Ce projet est sous licence MIT. Consultez le fichier LICENSE pour plus d’informations.
+Ce projet est sous licence MIT. Consultez le fichier [LICENSE] pour plus d’informations.
