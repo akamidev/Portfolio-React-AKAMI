@@ -1,0 +1,47 @@
+#contact {
+  .container {
+    .row {
+      .contact-left {
+        .sub-title {
+          margin-top: 200px;
+        }
+      }
+      .contact-right {
+        margin-top: 200px;
+      }
+    }
+  }
+}
+
+.btn.btn3 {
+  display: inline-block;
+  background: #ff004f;
+  margin-bottom: 90px;
+  transition: 0.5s;
+  cursor: pointer; /* Ajoute le curseur en forme de main */
+}
+
+@media only screen and (max-width: 600px) {
+  #contact {
+    .container {
+      .row {
+        .contact-left {
+          .sub-title {
+            margin-top: 150px; /* Supprime la marge supérieure */
+          }
+        }
+        .contact-right {
+          margin-top: 0; /* Supprime la marge supérieure */
+        }
+      }
+    }
+  }
+
+  .btn.btn3 {
+    display: inline-block;
+    background: #ff004f;
+    margin-bottom: 180px;
+    transition: 0.5s;
+    cursor: pointer; /* Ajoute le curseur en forme de main */
+  }
+}
