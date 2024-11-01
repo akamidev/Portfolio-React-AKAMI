@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://akamimehdi.netlify.app/sitemap.xml
