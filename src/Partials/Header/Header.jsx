@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react'; // Ajout de useRef
+// FILE: Partials/Header/Header.jsx
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import "./style.scss";
 import { NavLink } from "react-router-dom";
 import logo from '../../Logo/logo_m_red.png';
@@ -6,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 export default function Header() {
-  const sidemenuRef = useRef(null); // Utilisation de useRef
+  const sidemenuRef = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const openMenu = () => {
@@ -23,14 +24,12 @@ export default function Header() {
     }
   }, []);
 
-  // Gestionnaire d'événements pour détecter les clics en dehors du menu
   const handleClickOutside = useCallback((event) => {
     if (sidemenuRef.current && !sidemenuRef.current.contains(event.target)) {
       closeMenu();
     }
   }, [closeMenu]);
 
-  // Utiliser useEffect pour ajouter et supprimer le gestionnaire d'événements
   useEffect(() => {
     if (isMenuOpen) {
       document.addEventListener("mousedown", handleClickOutside);
@@ -59,10 +58,13 @@ export default function Header() {
                 <NavLink to="/Competence" className={({ isActive }) => (isActive ? "active" : "")}>Compétences</NavLink>
               </li>
               <li>
-                <NavLink to="/portfolio" className={({ isActive }) => (isActive ? "active" : "")}>Portfolio</NavLink>
+                <NavLink to="/Portfolio" className={({ isActive }) => (isActive ? "active" : "")}>Portfolio</NavLink>
               </li>
               <li>
-                <NavLink to="/contact" className={({ isActive }) => (isActive ? "active" : "")}>Contact</NavLink>
+                <NavLink to="/Contact" className={({ isActive }) => (isActive ? "active" : "")}>Contact</NavLink>
+              </li>
+              <li>
+                <NavLink to="/AssistantIA" className={({ isActive }) => (isActive ? "active" : "")}>Assistant IA </NavLink>
               </li>
               <FontAwesomeIcon icon={faTimes} className="fa-solid fa-xmark" onClick={() => closeMenu()} />
             </ul>
