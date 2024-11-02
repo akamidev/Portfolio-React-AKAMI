@@ -15,11 +15,30 @@ function Footer() {
       }
     };
 
+    const adjustForScrollbar = () => {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.marginRight = `${scrollbarWidth}px`;
+    };
+
+    const handleScroll = () => {
+      if (window.pageYOffset === 0) {
+        scrollToTopButton.style.display = 'none';
+      } else {
+        scrollToTopButton.style.display = 'block';
+      }
+    };
+
     window.addEventListener('scroll', checkScroll);
+    window.addEventListener('load', adjustForScrollbar);
+    window.addEventListener('resize', adjustForScrollbar);
+    window.addEventListener('scroll', handleScroll);
 
     // Nettoyage après le démontage
     return () => {
       window.removeEventListener('scroll', checkScroll);
+      window.removeEventListener('load', adjustForScrollbar);
+      window.removeEventListener('resize', adjustForScrollbar);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []); // Le tableau vide signifie que useEffect s'exécute une fois au montage et au démontage
 
