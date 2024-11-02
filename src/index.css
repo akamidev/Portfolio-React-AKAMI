@@ -1,5 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-
+/* Forcer l'affichage de la barre de défilement verticale */
+body {
+    overflow-y: scroll;
+  }
+  /* Désactiver le défilement lorsque la classe no-scroll est présente sur le body */
+body.no-scroll {
+    overflow: hidden;
+  }
+  /* Personnaliser la barre de défilement */
+  ::-webkit-scrollbar {
+    width: 12px; /* Largeur de la barre de défilement */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Couleur de la piste */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888; /* Couleur de la poignée */
+    border-radius: 6px; /* Arrondir les coins de la poignée */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Couleur de la poignée au survol */
+  }
 /* Réinitialise les marges, les rembourrages, définit la police par défaut à 'poppins' et applique la boîte de bordure à tous les éléments */
 
 * {
@@ -465,24 +489,34 @@ form .btn2 {
                                 /* -----Scroll to top button----------------- */
 
 /* Définit le style pour l'élément avec la classe .scroll-to-top */
-.scroll-to-top {
-    position: fixed;
-    /*Positionfixeparrapportàlafenêtredunavigateur*/bottom: 20px;
-    /*20pxdubasdelafenêtre*/right: 20px;
-    /*20pxducôtédroitdelafenêtre*/background-color: #ff004f;
-    color: #fff;
-    padding: 10px;
-    /*Espaceintérieurde10px*/border-radius: 50%;
-    /*Bordarrondipourcréeruneformecirculaire*/font-size: 20px;
-    /*Tailledelapolicede20px*/text-decoration: none;
-    /*Supprimeladécorationdutexte(commelessoulignements)*/transition: background-color 0.3s;
-  
-}
 
 /* Définit le style pour l'élément avec la classe .scroll-to-top lorsqu'il est survolé */
-.scroll-to-top:hover {
-    background-color: #e8477a; /* Change la couleur de fond en rose clair lors de la survol */
+.scroll-to-top {
+    display: none;
+    /*Masquerpardéfaut*/position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff004f;
+    color: white;
+    padding: 10px;
+    border-radius: 10%;
+    cursor: pointer;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s;
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    -ms-border-radius: 10%;
+    -o-border-radius: 10%;
 }
+  
+  .scroll-to-top:hover {
+    opacity: 0.8;
+  }
+  
+  /* Masquer le bouton scroll-to-top lorsque la classe no-scroll-to-top est présente sur le body */
+  body.no-scroll-to-top .scroll-to-top {
+    display: none;
+  }
 
                                /* -----------------media query----------------- */
                                
@@ -599,25 +633,28 @@ nav ul .fa-solid {
 
 }
 .scroll-to-top {
-    position: fixed; /* Position fixe par rapport à la fenêtre du navigateur */
-    bottom: 20px; /* 20px du bas de la fenêtre */
-    right: 20px; /* 20px du côté droit de la fenêtre */
-    background-color: #ff004f; 
-    color: #fff; 
-    border-radius: 50%; /* Bord arrondi pour créer une forme circulaire */
-    font-size: 10px; /* Taille de la police de 20px */
-    text-decoration: none; /* Supprime la décoration du texte (comme les soulignements) */
-    transition: background-color 0.3s; /* Transition douce de la couleur de fond sur 0.3s */
-
+    position: fixed;
+    /*Positionfixeparrapportàlafenêtredunavigateur*/bottom: 90px;
+    /*20pxdubasdelafenêtre*/right: 20px;
+    /*20pxducôtédroitdelafenêtre*/background-color: #ff004f;
+    color: #fff;
+    border-radius: 10%;
+    /*Bordarrondipourcréeruneformecirculaire*/font-size: 10px;
+    /*Tailledelapolicede20px*/text-decoration: none;
+    /*Supprimeladécorationdutexte(commelessoulignements)*/transition: background-color 0.3s;
+    
 }
 
 /* Définit le style pour l'élément avec la classe .scroll-to-top lorsqu'il est survolé */
 .scroll-to-top:hover {
     background-color: #e8477a; /* Change la couleur de fond en rose clair lors de la survol */
 }
+body.no-scroll-to-top .scroll-to-top {
+    display: none;
+  }
 /* Style pour l'élément avec la classe 'Copyright' */
 .Copyright {
-    height: 100px; /* Hauteur */   
+    
     font-size: 10px; /* Taille du texte */
     bottom: 0; /* Position en bas */
     position: absolute; /* Position absolue */
