@@ -9,7 +9,7 @@ function Home() {
           <h1>
           Bonjour, je <span>suis</span> Mehdi AKAMI
           </h1>
-          <p>Développeur Web et Web Mobile.</p>
+          <p>Développeur full-stack.</p>
           <p>Je vous souhaite la bienvenue dans mon portfolio,</p>
           <p>
            où je partage mon parcours, mes compétences et mes réalisations
