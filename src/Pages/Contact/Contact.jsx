@@ -28,7 +28,12 @@ function Contact() {
       message: message,
     };
 
-    emailjs.send('service_17bbgr4', 'template_yuuy4yb', templateParams, '_-qUrlSwa5PiVj0D5')
+    emailjs.send(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      templateParams,
+      process.env.REACT_APP_EMAILJS_USER_ID
+    )
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
         setMsg(true);
@@ -138,7 +143,7 @@ function Contact() {
 
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10476.958965051013!2d2.2746841250599785!3d48.96796057816373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66627e3fe4405%3A0x40b82c3688b2db0!2s95210%20Saint-Gratien!5e0!3m2!1sfr!2sfr!4v1705407374987!5m2!1sfr!2sfr"
-        width="1840"
+        width="1680"
         height="550"
         style={{ border: 0 }}
         allowFullScreen=""
