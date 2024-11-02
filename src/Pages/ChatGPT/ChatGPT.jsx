@@ -30,6 +30,9 @@ function ChatGPT() {
     "chkoun houwa mouhamed": "Mouhamed est le frère de Mehdi.",
     "chkoun houwa mehdi ?": "Mehdi houwa li7wak ou makhlssekch 😂😂 désolé rani ghi da7k m3ak",
     "Chkoun houwa mehdi ?": "Mehdi houwa li7wak ou makhlssekch 😂😂 désolé rani ghi da7k m3ak",
+    "c'est qui nataly ?": "Nataly est l'amour de Mehdi❤️.",
+    "Quién es Nataly?" : "Nataly es el amor de Mehdi❤️.",
+    "quién es Nataly?" : "Nataly es el amor de Mehdi❤️.",
   };
 
   const formatMessageContent = (text) => {
